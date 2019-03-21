@@ -1,0 +1,21 @@
+<h2>{{account.name | uppercase}} Details</h2>
+<div><span>id: </span>{{account.id}}</div>
+<div>
+    <mat-form-field>
+        <input matInput [(ngModel)]="account.name" placeholder="Name">
+    </mat-form-field>
+</div>
+<div><span>serial: </span>{{account.serial}}</div>
+<div>
+    <mat-form-field>
+        <input matInput [(ngModel)]="account.serial" [matDatepicker]="picker" placeholder="{{account.serial}}" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<div>
+    <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+</div>

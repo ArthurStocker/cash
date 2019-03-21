@@ -3,16 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ChartsModule } from 'ng2-charts';
+import { MaterialModule } from '../material.module';
+import { AccountsComponent } from './accounts/accounts.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    FormsModule,
+    ReactiveFormsModule,
+
+    ChartsModule,
+
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
