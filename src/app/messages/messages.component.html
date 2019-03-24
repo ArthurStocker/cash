@@ -1,0 +1,15 @@
+<div class="message-component" *ngIf="messageService.messages.length">
+
+    <button mat-icon-button (click)="messageService.clear()">
+        <mat-icon>delete</mat-icon>
+    </button>
+    <span>Delete all Messages</span>
+    <mat-divider></mat-divider>
+    <mat-list>
+        <h3 matSubheader>Messages</h3>
+        <mat-list-item *ngFor="let message of messageService.messages">
+            <p matLine><span> {{message}} </span></p>
+        </mat-list-item>
+    </mat-list>
+
+</div>

@@ -1,0 +1,51 @@
+<div class="account-component" *ngIf="account">
+
+    <app-dashboard></app-dashboard>
+
+    <table class="account-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="account-full-width">
+                    <input matInput [(ngModel)]="account.id" placeholder="{{account.id}}">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="account-full-width">
+                    <input matInput [(ngModel)]="account.name" placeholder="{{account.name}}" />
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        <mat-form-field class="account-full-width">
+            <textarea matInput [(ngModel)]="account.description" placeholder="{{account.description}}"></textarea>
+        </mat-form-field>
+    </p>
+
+    <table class="account-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="account-full-width">
+                    <input matInput [(ngModel)]="account.order" [matDatepicker]="orderPicker" placeholder="{{account.order}}" />
+                    <mat-datepicker-toggle matSuffix [for]="orderPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #orderPicker></mat-datepicker>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="account-full-width">
+                    <input matInput [(ngModel)]="account.serial" [matDatepicker]="serialPicker" placeholder="{{account.serial}}" />
+                    <mat-datepicker-toggle matSuffix [for]="serialPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #serialPicker></mat-datepicker>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="account-full-width">
+                    <input matInput [(ngModel)]="account.amount" maxlength="7" placeholder="{{account.amount}}" value="0.00">
+                    <mat-hint align="end">{{account.amount.length}} / 7</mat-hint>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+</div>

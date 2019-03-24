@@ -1,0 +1,13 @@
+.account-component {
+    min-width: 720px;
+    max-width: 720px;
+    width: 100%;
+}
+
+.account-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}

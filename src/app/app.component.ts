@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { MENUITEMS } from './app-menu.default';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cash';
+
+  navItems = MENUITEMS;
+
+  constructor() { }
+
 }

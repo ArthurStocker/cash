@@ -1,11 +1,39 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-    <h1>
-        Welcome to {{ title }}!
-    </h1>
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!--
+<div style="text-align:center"></div>
+        <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
+-->
+<!--
+    div -> [class.app-is-mobile]="mobileQuery.matches"
 
-<app-accounts></app-accounts>
+    mat-sidenav-container -> [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+    mat-sidenav -> [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+-->
+<div class="app-component">
 
-<router-outlet></router-outlet>
+    <mat-toolbar color="primary" class="app-toolbar mat-elevation-z12">
+        <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <img width="30" alt="App Logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KCjxzdmcgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiAKICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAKICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIAogIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIAogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgCiAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIiAKICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE3OS4wMDQgMTc5LjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTc5LjAwNCAxNzkuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc29kaXBvZGk6ZG9jbmFtZT0iY29pbnMtc3RhY2tlZC1vbi1hLWhhbmQtcGFsbS5zdmciIGlua3NjYXBlOnZlcnNpb249IjAuOTIuMiA1YzNlODBkLCAyMDE3LTA4LTA2Ij4KICA8bWV0YWRhdGEgaWQ9Im1ldGFkYXRhNDEiPgogICAgPHJkZjpSREY+CiAgICAgIDxjYzpXb3JrIHJkZjphYm91dD0iIj4KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgICAgICA8ZGM6dHlwZSByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZGVmcyBpZD0iZGVmczM5IiAvPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcgcGFnZWNvbG9yPSIjZmZmZmZmIiBib3JkZXJjb2xvcj0iIzY2NjY2NiIgYm9yZGVyb3BhY2l0eT0iMSIgb2JqZWN0dG9sZXJhbmNlPSIxMCIgZ3JpZHRvbGVyYW5jZT0iMTAiIGd1aWRldG9sZXJhbmNlPSIxMCIgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAiIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTM5NyIgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxMSIgaWQ9Im5hbWVkdmlldzM3IiBzaG93Z3JpZD0iZmFsc2UiIGlua3NjYXBlOnpvb209IjEuMzE4NDA2MyIgaW5rc2NhcGU6Y3g9Ijg5LjUwMTk5OSIgaW5rc2NhcGU6Y3k9Ijg5LjUwMTk5OSIgaW5rc2NhcGU6d2luZG93LXg9IjAiIGlua3NjYXBlOndpbmRvdy15PSIwIiBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIwIiBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJDYXBhXzEiIC8+CiAgPGcgaWQ9Imc0IiB0cmFuc2Zvcm09Im1hdHJpeCgtMSwwLDAsMSwxNzkuMDAzODQsMCkiPgogICAgPHBhdGggc3R5bGU9ImZpbGw6I2ZmZmZmZiIgZD0ibSAxMjcuMTI0LDEyNy43NzMgYyAwLDAuNzcgMCwxLjUwNCAwLDIuMjIgNC4wNzUsMS42NzEgNy43NjksMi42ODUgMTAuNDcyLDEuOTM5IDUuOTU1LC0xLjYzNSAxMC43MDUsLTguMTY5IDE1LjI5MywtMTQuNDg4IDMuNTc0LC00LjkwNSA2Ljk1MSwtOS41MTcgMTEuMTE2LC0xMi4yMiAwLC0zMC40MTkgMCwtNzAuMjEyIDAsLTgzLjI4NiAtMC4wMTgsMC4wMTIgLTAuMDM2LDAuMDI0IC0wLjA1NCwwLjAzNiAtMC41MTksLTQuMzQ0IC0xNS4zNjUsLTQuNTcxIC0xOC4zOTYsLTQuNTcxIC0zLjAyNSwwIC0xNy44NzEsMC4yMjcgLTE4LjQwMiw0LjU3MSAtMC4wMTIsLTAuMDEyIC0wLjAzLC0wLjAyNCAtMC4wNDIsLTAuMDM2IDAsMTIuMDU5IDAsNDYuODU4IDAsNzYuMDQ4IDYuMTI4LDAuMzcgMTUuOTQzLDIuMzg3IDE3LjUzMSwxMy4zIDAuNTM3LDMuNjEgLTAuMzE2LDYuOTIyIC0yLjQ0Niw5LjU1MyAtMy4xMzIsMy44OTEgLTguNjQsNS44MzYgLTE1LjA3Miw2LjkzNCB6IG0gMy4wOTcsLTEwNS41NiBjIDEuNTc1LC0wLjgzNSA2LjgwOCwtMi4wNDcgMTUuMzM1LC0yLjA0NyA4LjUzOSwwIDEzLjc3OCwxLjIxMSAxNS4zMzUsMi4wNDcgLTEuNTY5LDAuODI5IC02LjgwMiwyLjA0MSAtMTUuMzM1LDIuMDQxIC04LjUyNywtMC4wMDYgLTEzLjc2LC0xLjIxOCAtMTUuMzM1LC0yLjA0MSB6IG0gLTE1Ljk3OSw3Ni4xMTMgYyAxLjQ1NiwtMC4wOTUgMi45NDgsLTAuMTg1IDQuNDM5LC0wLjI2OSAwLC0yMC41NDQgMCwtNDIuOTc5IDAsLTU0LjMwNCAtMC4wMTgsMC4wMTIgLTAuMDM2LDAuMDEyIC0wLjA1NCwwLjAyNCAtMC41MTksLTQuMzMyIC0xNS4zNjUsLTQuNTU5IC0xOC4zOSwtNC41NTkgLTMuMDI1LDAgLTE3Ljg3NywwLjIyNyAtMTguMzk2LDQuNTU5IC0wLjAxMiwtMC4wMTIgLTAuMDM2LC0wLjAxMiAtMC4wNDgsLTAuMDI0IDAsMTAuNjYzIDAsMzEuMTk1IDAsNTAuNzA2IDAuODUzLDAuMTk3IDEuNzAxLDAuNCAyLjU2NiwwLjYxNSA1Ljk2NywxLjQzOCAxMi4xMzEsMi45MjQgMTguMTIxLDMuNDg1IDMuNDY4LDAuMzM0IDcuNTkxLDAuMDMgMTEuNzYyLC0wLjIzMyB6IE0gODQuOTAzLDQ0LjAwNCBjIDEuNTc1LC0wLjg0MSA2LjgyLC0yLjAzNSAxNS4zNDEsLTIuMDM1IDguNTMzLDAgMTMuNzgzLDEuMTkzIDE1LjMzNSwyLjAzNSAtMS41NjMsMC44NDEgLTYuODA4LDIuMDQ3IC0xNS4zMzUsMi4wNDcgLTguNTIxLDAgLTEzLjc2NiwtMS4yMDYgLTE1LjM0MSwtMi4wNDcgeiBNIDczLjM3NSw5Mi42NDYgYyAwLC04LjkyNiAwLC0xMi43MDMgMCwtMjcuMDk2IC0wLjAxOCwwLjAxOCAtMC4wMzYsMC4wMjQgLTAuMDU0LDAuMDM2IC0wLjUxOSwtNC4zMzggLTE1LjM2NSwtNC41NzEgLTE4LjM5NiwtNC41NzEgLTMuMDE5LDAgLTE3Ljg3NywwLjIzMyAtMTguMzk2LDQuNTcxIC0wLjAwNiwtMC4wMTIgLTAuMDMsLTAuMDE4IC0wLjA0MiwtMC4wMzYgMCwxNy45MyAwLDE5LjM5MiAwLDM0Ljg3NiA2Ljk4MSwtNC4yNjYgMTQuNDA0LC03LjU4NCAyMi4zMTYsLTguNTkyIDQuNTk1LC0wLjU4NCA5LjQ4MiwtMC4xMDcgMTQuNTcyLDAuODEyIHogTSA1NC45MzEsNjcuODQ4IGMgLTguNTMzLDAgLTEzLjc3OCwtMS4yMDUgLTE1LjMzNSwtMi4wNTMgMS41NzUsLTAuODI5IDYuODE0LC0yLjAyOSAxNS4zMzUsLTIuMDI5IDguNTM5LDAgMTMuNzc4LDEuMTk5IDE1LjM0MSwyLjAyOSAtMS41NjksMC44NDcgLTYuODA4LDIuMDUzIC0xNS4zNDEsMi4wNTMgeiBNIDAsMTMxLjYzOSBjIDE1LjgxMiwtNi42ODkgMzUuOTYyLC0zMi40MzYgNTkuMzcsLTM1LjQ0MyAxMi4xNiwtMS41NjkgMjcuNDg5LDUuMzM0IDQyLjcxMSw2Ljc0OSAxMy4zOSwxLjI0NyAzNi4wNTgsLTUuODU0IDM4LjIxOCw4Ljk5MiAxLjg4LDEyLjg1OSAtMjAuODA2LDEyLjE2IC0zNS45NjgsMTMuNDk3IDExLjg1NiwyLjM2MyAyNC42NjEsMTMuNDQ5IDM0LjQzNSwxMC43NTggMTIuNTksLTMuNDc5IDE5LjEzLC0yMi4wODMgMjcuOTA3LC0yNy40NzcgOS45MjksLTYuMTA0IDEzLjc3NywtMi4xNjYgMTEuODUsNS40OSAtNC43OTEsMTkuMDgyIC0xMy4wMDgsMzYuNzA4IC0yOS4yMiw0Mi43MDUgLTQyLjI5OSwxNS42NDUgLTg3Ljg4NiwtMTQuNDUyIC0xMTkuODA5LDQuMjQyIHoiIGlkPSJwYXRoMiIgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgLz4KICA8L2c+CiAgPGcgaWQ9Imc2IiAvPgogIDxnIGlkPSJnOCIgLz4KICA8ZyBpZD0iZzEwIiAvPgogIDxnIGlkPSJnMTIiIC8+CiAgPGcgaWQ9ImcxNCIgLz4KICA8ZyBpZD0iZzE2IiAvPgogIDxnIGlkPSJnMTgiIC8+CiAgPGcgaWQ9ImcyMCIgLz4KICA8ZyBpZD0iZzIyIiAvPgogIDxnIGlkPSJnMjQiIC8+CiAgPGcgaWQ9ImcyNiIgLz4KICA8ZyBpZD0iZzI4IiAvPgogIDxnIGlkPSJnMzAiIC8+CiAgPGcgaWQ9ImczMiIgLz4KICA8ZyBpZD0iZzM0IiAvPgo8L3N2Zz4=">
+        <h1 class="app-name">{{ title }}</h1>
+    </mat-toolbar>
+    <mat-sidenav-container class="app-sidenav-container">
+        <mat-sidenav #sidenav [mode]="'over'" [fixedInViewport]="true" fixedTopGap="65">
+            <mat-nav-list>
+                <a mat-list-item routerLink="{{navItem.path}}" *ngFor="let navItem of navItems">
+                    <mat-icon matListIcon>{{navItem.class}}</mat-icon>
+                    <p matLine>
+                        <span> {{navItem.text}} </span>
+                    </p>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+            <!--<div color="lightgrey" style="font-size: 0.25cm">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+        target="_blank">CC BY 3.0</a></div>-->
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
